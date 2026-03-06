@@ -36,6 +36,19 @@ public class Pet {
     }
 
     public int getHumanAge() {
-        return realAge * 7;
+        if (realAge<=0) return 0;
+
+        switch (type) {
+            case "dog":
+                if (realAge == 1) return 15;
+                if (realAge== 2) return 15 + 9;
+                return 24 + (realAge - 2) * 5;
+            case "cat":
+                if (realAge == 1) return 15;
+                if (realAge == 2) return 15 + 9;
+                return 24 + (realAge-2) * 4;
+            default:
+                return realAge * 7;
+        }
     }
 }
